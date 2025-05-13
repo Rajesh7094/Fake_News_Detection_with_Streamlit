@@ -17,13 +17,8 @@ This app is deployed on Streamlit Cloud! Check out the live demo:
 ## Screenshots
 
 **Main Interface**  
-![Main Page](https://via.placeholder.com/600x400?text=Fake+News+Detection+Interface)
+![Main Interface](Main Interface.png)
 
-**Real News Prediction**  
-![Real News](https://via.placeholder.com/600x400?text=Real+News+Example)
-
-**Fake News Detection**  
-![Fake News](https://via.placeholder.com/600x400?text=Fake+News+Detection)
 
 ## Requirements
 - Python 3.10+
