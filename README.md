@@ -17,7 +17,7 @@ This app is deployed on Streamlit Cloud! Check out the live demo:
 ## Screenshots
 
 **Main Interface**  
-![Main Interface.png](Main Interface.png)
+![Main Interface.jpg](Main Interface.jpg)
 
 
 ## Requirements
