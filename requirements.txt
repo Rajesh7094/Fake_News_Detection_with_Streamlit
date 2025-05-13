@@ -1,0 +1,6 @@
+streamlit==1.28.0
+scikit-learn==1.3.2
+nltk==3.8.1
+pandas  # Updated to latest compatible version
+numpy  # Updated to match pandas
+tqdm==4.66.1
