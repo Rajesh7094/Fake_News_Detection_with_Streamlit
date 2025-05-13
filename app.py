@@ -9,10 +9,7 @@ vectorizer = None
 
 # Download NLTK data
 import nltk
-
-nltk.download('punkt')
-nltk.download('stopwords')
-nltk.download('wordnet')
+nltk.data.path.append("/home/adminuser/nltk_data")
 
 # Set page config
 st.set_page_config(

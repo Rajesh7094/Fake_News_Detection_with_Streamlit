@@ -2,12 +2,27 @@ import re
 import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
-from nltk.tokenize import word_tokenize
 
-# Initialize lemmatizer and stopwords
-lemmatizer = WordNetLemmatizer()
+# Initialize NLTK data
+try:
+    nltk.data.find('corpora/stopwords')
+except LookupError:
+    nltk.download('stopwords', download_dir='/home/adminuser/nltk_data')
+    nltk.data.path.append("/home/adminuser/nltk_data")
+
+try:
+    nltk.data.find('corpora/wordnet')
+except LookupError:
+    nltk.download('wordnet', download_dir='/home/adminuser/nltk_data')
+
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt', download_dir='/home/adminuser/nltk_data')
+
+# Now safely initialize the components
 stop_words = set(stopwords.words('english'))
-
+lemmatizer = WordNetLemmatizer()
 
 def preprocess_text(text):
     """
