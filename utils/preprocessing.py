@@ -1,29 +1,33 @@
 import re
 import nltk
+import os
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 
-# Initialize NLTK data
+# Use a writable directory in the app's workspace
+NLTK_DATA_DIR = os.path.join(os.getcwd(), 'nltk_data')
+os.makedirs(NLTK_DATA_DIR, exist_ok=True)
+nltk.data.path.append(NLTK_DATA_DIR)
+
+# Download required NLTK data if not present
 try:
     nltk.data.find('corpora/stopwords')
 except LookupError:
-    nltk.download('stopwords', download_dir='/home/adminuser/nltk_data')
-    nltk.data.path.append("/home/adminuser/nltk_data")
+    nltk.download('stopwords', download_dir=NLTK_DATA_DIR)
 
 try:
     nltk.data.find('corpora/wordnet')
 except LookupError:
-    nltk.download('wordnet', download_dir='/home/adminuser/nltk_data')
+    nltk.download('wordnet', download_dir=NLTK_DATA_DIR)
 
 try:
     nltk.data.find('tokenizers/punkt')
 except LookupError:
-    nltk.download('punkt', download_dir='/home/adminuser/nltk_data')
+    nltk.download('punkt', download_dir=NLTK_DATA_DIR)
 
-# Now safely initialize the components
+# Initialize components after ensuring data is available
 stop_words = set(stopwords.words('english'))
 lemmatizer = WordNetLemmatizer()
-
 def preprocess_text(text):
     """
     Clean and preprocess text for fake news detection

@@ -9,7 +9,10 @@ vectorizer = None
 
 # Download NLTK data
 import nltk
-nltk.data.path.append("/home/adminuser/nltk_data")
+import os
+NLTK_DATA_DIR = os.path.join(os.getcwd(), 'nltk_data')
+os.makedirs(NLTK_DATA_DIR, exist_ok=True)
+nltk.data.path.append(NLTK_DATA_DIR)
 
 # Set page config
 st.set_page_config(
